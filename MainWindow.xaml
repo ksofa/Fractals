@@ -1,0 +1,65 @@
+﻿<Window x:Class="Frac.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Frac"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="615" Width="1177" Background="#FFF1F1F1" MinWidth="1177" MinHeight="615" WindowStartupLocation="CenterScreen" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="585*"/>
+            <ColumnDefinition Width="1000*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Viewbox Grid.Column="2" HorizontalAlignment="Stretch" Grid.RowSpan="5">
+            <Canvas x:Name="MyCanvas" Margin="27,10,24,22"  Background="White" Grid.Column="3"  Width="1000" Height="1000" HorizontalAlignment="Stretch" Grid.RowSpan="5"/>
+        </Viewbox>
+        <Label Content="Pythagorean tree" HorizontalAlignment="Left" Margin="22,47,0,0" VerticalAlignment="Top" BorderBrush="#FF92BDA5" Grid.Column="0"/>
+        <StackPanel Grid.Column="1" Grid.Row="0">
+            <Label Content="Recursion depth of Tree" HorizontalAlignment="Left"  VerticalAlignment="Top" />
+            <Slider x:Name="RecursionDepth_Tree" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="120" ValueChanged="RecursionDepth_Tree_ValueChanged" Maximum="8"/>
+            <Label Content="Angle Right" HorizontalAlignment="Left"  VerticalAlignment="Top" RenderTransformOrigin="0.51,0.656" Grid.Column="1"/>
+            <Slider x:Name="angle_left" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="120" Grid.Column="1" ValueChanged="RecursionDepth_Tree_ValueChanged" Maximum="1.2"/>
+            <Label Content="Angle Left" HorizontalAlignment="Left"  VerticalAlignment="Top" RenderTransformOrigin="-0.474,0.695" Grid.Column="1"/>
+            <Slider x:Name="angle_right" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="120" Grid.Column="1" ValueChanged="RecursionDepth_Tree_ValueChanged" Maximum="1.2"/>
+            <Label Content="Сoefficient" HorizontalAlignment="Left"  VerticalAlignment="Top" Grid.Column="1"/>
+            <Slider x:Name="coef" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="120" Grid.Column="1" ValueChanged="RecursionDepth_Tree_ValueChanged" Maximum="5" Minimum="1.4"/>
+        </StackPanel>
+        <Label Content="Koch" HorizontalAlignment="Left"  VerticalAlignment="Top"  Grid.Column="0" Grid.Row="1" />
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <Label Content="Recursion depth of Koch" HorizontalAlignment="Left"  VerticalAlignment="Top"  Grid.Column="1"/>
+            <Slider x:Name="Koch_depth" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="120" Grid.Column="1" ValueChanged="Depth_Koch" Maximum="7"/>
+
+        </StackPanel>
+        <Label Content="Serpinski Carpet" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0" Grid.Row="2"  />
+        <StackPanel Grid.Column="1" Grid.Row="2">
+            <Label Content="Recursion depth of Serpinski" HorizontalAlignment="Left"  VerticalAlignment="Top" Grid.Column="1"/>
+            <Slider x:Name="DepthSerpincki" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="120" Grid.Column="1" ValueChanged="DepthSerpinckiCarpet_ValueChanged" Maximum="5"/>
+          
+        </StackPanel>
+        <Label Content="Triangle" HorizontalAlignment="Left"  VerticalAlignment="Top" Grid.Column="0" Grid.Row="3"/>
+        <StackPanel Grid.Column="1" Grid.Row="3">
+            <Label Content="Recursion depth of Triangle" HorizontalAlignment="Left"  VerticalAlignment="Top" Grid.Column="1"/>
+            <Slider x:Name="Triangle_Serp" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Grid.Column="1" ValueChanged="Triangle_Serp_ValueChanged" Maximum="6"/>
+
+        </StackPanel>
+        <Label Content="Cantor" HorizontalAlignment="Left"  VerticalAlignment="Top" Grid.Column="0" Grid.Row="4" />
+        <StackPanel Grid.Column="1" Grid.Row="4">
+            <Label Content="Recursion depth of Cantor" HorizontalAlignment="Left"  VerticalAlignment="Top" />
+            <Slider x:Name="depth_Cantor" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="120" Grid.Column="1" ValueChanged="depth_Cantor_ValueChanged"/>
+            <Label Content="Space between Cantor" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1"/>
+            <Slider x:Name="space_Cantor" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="120" Grid.Column="1" ValueChanged="depth_Cantor_ValueChanged" Minimum="1" Maximum="25" />
+        </StackPanel>
+
+        
+       
+    </Grid>
+</Window>
